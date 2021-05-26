@@ -10,6 +10,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import static org.hamcrest.Matchers.is;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,7 +27,7 @@ public class JsonControllerTest {
 
         this.mvc.perform(request)
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.title", is("The GoldFather")))
+                .andExpect(jsonPath("$.Title", is("The GoldFather")))
                 .andExpect(jsonPath("$.Minutes", is(175)))
                 .andExpect(jsonPath("$.Genre", is( "Crime, Drama")))
                 .andExpect(jsonPath("$.Rating", is(9.2)))
@@ -59,10 +60,10 @@ public class JsonControllerTest {
     @Test
     public void testGrossTotal() throws Exception {
 
-        RequestBuilder request = get("/movies/gross/total");
+        RequestBuilder request = post("/movies/gross/total");
 
         this.mvc.perform(request)
                 .andExpect(status().isOk())
-                .andExpect(jsonPath( "$.gross", is(134.97 + 57.30)));
+                .andExpect(jsonPath( "$.result", is(191)));
     }
 }

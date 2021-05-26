@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Movie {
+public class MovieObject {
     private String title;
     private int minutes;
     private String genre;
