@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Builder
 public class Person {
     private String role;
-    private String first;
-    private String Name;
+    private String firstName;
+    private String lastName;
 
 }

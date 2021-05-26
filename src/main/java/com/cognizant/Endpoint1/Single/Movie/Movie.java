@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+// shortcut annotation without having to create a GETTER/SETTER:
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +23,6 @@ public class Movie {
     private double gross;
     private String year;
     private List<Person> credits;
+
 
 }

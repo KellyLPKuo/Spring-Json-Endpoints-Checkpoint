@@ -54,6 +54,15 @@ public class JsonControllerTest {
                 .andExpect(jsonPath("$.Credits.Person[4].Role", is("Star")))
                 .andExpect(jsonPath("$.Credits.Person[4].FirstName", is("Diane")))
                 .andExpect(jsonPath("$.Credits.Person[4].LastName", is("Keaton")));
+    }
 
+    @Test
+    public void testGrossTotal() throws Exception {
+
+        RequestBuilder request = get("/movies/gross/total");
+
+        this.mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath( "$.gross", is(134.97 + 57.30)));
     }
 }
