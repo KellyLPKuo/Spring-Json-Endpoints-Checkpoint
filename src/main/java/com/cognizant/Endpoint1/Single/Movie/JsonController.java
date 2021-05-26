@@ -114,7 +114,7 @@ public class JsonController {
         public Movie postJSONMovie(){
             total = singleMovie1().movie1.gross + singleMovie2().movie2.gross;
             System.out.println(total);
-            return String.valueOf(total);
+            return total;
     }
 
 
